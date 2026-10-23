@@ -1,0 +1,53 @@
+/* Personal content adaptation; reference animation/layout retained. */
+html[lang="zh-CN"] body{font-family:"PP Neue Montreal","PingFang SC","Microsoft YaHei",sans-serif}
+.about_contain{overflow-y:auto;gap:3rem}
+.about_contain>span{max-width:80rem;line-height:1.9;flex-shrink:0}
+.about-info{gap:2rem}
+.about-info ul{line-height:1.9}
+.about-info .resume-detail{font-size:var(--fs-xs);opacity:.7;max-width:90rem;margin:.5rem 0 1rem;line-height:1.8}
+.card-content h2{font-family:"PP Neue Montreal","PingFang SC",sans-serif;font-size:2.4rem;line-height:1.35}
+.card-content p{line-height:1.65;font-family:"Fragment Mono","PingFang SC",sans-serif}
+.project-modal-title{font-family:"PP Neue Montreal","PingFang SC",sans-serif;line-height:1.35}
+.project-modal-desc{white-space:pre-line;line-height:1.8;font-family:"Fragment Mono","PingFang SC",sans-serif}
+.project-modal-info{overflow-y:auto;max-height:85vh}
+.intro-wrap h4{line-height:1.5;font-family:"PP Neue Montreal","PingFang SC",sans-serif}
+.footer-info-txt .design-credit{font-size:9px;opacity:.5}
+@media(max-width:767px){.about_contain{padding:5rem 2.4rem 2.4rem}.about-info{gap:1.6rem}.project-modal-info{max-height:45vh}.intro-wrap h4{font-size:clamp(2.4rem,6vw,4rem)}}
+/* Personal photographs: calm monochrome framing, original scroll/card sequence. */
+.about-introduction{display:grid;grid-template-columns:minmax(0,1fr) minmax(110px,180px);gap:5vw;align-items:start;max-width:1000px;flex-shrink:0}
+.about-introduction>span{line-height:1.9;max-width:65rem;padding-top:1rem}
+.about-portrait{margin:0}.about-portrait img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 35%}
+.about-portrait figcaption{font:9px/1.4 "Fragment Mono",monospace;letter-spacing:.04em;opacity:.5;margin-top:10px}
+.project-modal[data-presentation="journal"] .project-modal-body{justify-content:flex-start;padding-top:7vh;padding-bottom:0}
+.project-modal[data-presentation="journal"] .project-modal-media{height:62vh}
+.project-modal[data-presentation="journal"] .swiper-wrapper{gap:0;margin-right:0;align-items:start}
+.project-modal[data-presentation="journal"] .swiper-slide{position:relative;height:62vh;aspect-ratio:var(--slide-ratio,1.333);width:auto;max-width:90vw;margin-right:2rem;overflow:visible;padding-bottom:3rem}
+.project-modal[data-presentation="journal"] .swiper-slide:first-child{margin-left:4rem}
+.project-modal[data-presentation="journal"] .project-modal-img{object-fit:contain!important;object-position:center;display:block}
+.project-modal[data-presentation="journal"] .media-caption{position:absolute;bottom:0;left:0;font-size:10px;line-height:1.5;color:#aaa;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.project-modal[data-presentation="journal"] .project-modal-info{max-height:24vh;padding-top:1.5rem;padding-bottom:2rem}
+.project-modal[data-presentation="journal"] .project-modal-title{margin-top:0}
+.project-modal[data-presentation="journal"] .project-modal-desc{margin:8px 0;line-height:1.6}
+.project-modal[data-presentation="journal"] .project-modal-live-btn{font-size:11px}
+.card[data-project="project3"] .card-img img{object-position:62% 48%}
+@media(max-width:767px){
+.about-introduction{grid-template-columns:1fr 105px;gap:20px}.about-introduction>span{font-size:13px;line-height:1.75}.about-portrait figcaption{font-size:7px}
+.project-modal[data-presentation="journal"] .project-modal-body{padding-top:10vh}
+.project-modal[data-presentation="journal"] .project-modal-media{height:49vh}
+.project-modal[data-presentation="journal"] .swiper-slide{height:49vh;max-width:86vw;margin-right:14px}
+.project-modal[data-presentation="journal"] .swiper-slide:first-child{margin-left:20px}
+.project-modal[data-presentation="journal"] .project-modal-info{max-width:100%;max-height:28vh;bottom:5rem;padding:1.6rem 2rem}
+.project-modal[data-presentation="journal"] .arrow-wrap{padding:1.5rem 2rem}
+}
+/* Complete project documents: contiguous original-resolution image segments. */
+.project-modal[data-presentation="case-study"] .project-modal-body{padding:70px 0 75px;overflow:hidden}
+.case-reader{width:100%;height:100%;overflow:auto;overscroll-behavior:contain;touch-action:pan-x pan-y;scrollbar-gutter:stable;color:#eee}
+.case-heading{max-width:1501px;margin:auto;padding:24px 32px 32px}
+.case-heading h2{font-size:clamp(20px,3vw,40px);line-height:1.4;margin:0 0 12px}
+.case-heading a{font-size:12px;text-decoration:underline;color:#bbb}
+.case-pages{max-width:1501px;margin:auto;background:#fff;line-height:0}
+.case-pages img{display:block;width:100%;height:auto;margin:0;border:0}
+.case-end{text-align:center;font-size:12px;padding:40px 20px}
+.project-modal[data-presentation="case-study"] .project-modal-close{top:20px;right:20px;left:auto;transform:none}
+.project-modal[data-presentation="case-study"] .arrow-wrap{background:#080808;padding:16px 24px}
+@media(max-width:767px){.case-heading{padding:20px 16px}.project-modal[data-presentation="case-study"] .project-modal-body{padding-top:65px;padding-bottom:85px}}

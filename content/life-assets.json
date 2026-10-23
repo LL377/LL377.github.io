@@ -1,0 +1,41 @@
+{
+  "sourceLayout": "/Users/lelao/Documents/奥创/personal-portfolio2/assets/profile/life/source/collage.png",
+  "selected": {
+    "lake": "c9173d9126ab75eff4f708e80a5bc2d3.png",
+    "architecture": "7cbd44bc0a2e481d30c53ac2d9d1a95a.jpg",
+    "pelicans": "ed58f4d9cfbc478feb1428d6e6a1c2ff.jpg",
+    "seaside-tree": "8b04b337630f55c25f3da97aa77fb6fd.jpg",
+    "cat": "45644e7ce6413f066ecd1cd1fd30eacc.png",
+    "with-cat": "af20950d3b71a1c748544fe499648bbd.png",
+    "portrait": "d801c105a119888820b45e5eb8439378.png",
+    "light-space": "266c97a4461d2c76fed738bdee327d6c.png"
+  },
+  "cropRange": [
+    0,
+    8410
+  ],
+  "campus": "Not included: user confirmed the group photograph is not a campus photograph.",
+  "collageSegments": [
+    [
+      "journal-opening",
+      0,
+      3200
+    ],
+    [
+      "journal-scrapbook",
+      3200,
+      6500
+    ],
+    [
+      "journal-closing",
+      6500,
+      8410
+    ]
+  ],
+  "addedPhotos": [
+    "/assets/profile/life/museum.png",
+    "/assets/profile/life/group.png",
+    "/assets/profile/life/cooking.png",
+    "/assets/profile/life/cheesecake.png"
+  ]
+}

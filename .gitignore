@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+_site/
+tmp/
+output/
+.openai/
+assets/profile/life/source/
+.env
+.env.*
+dist/
+reference/
+.github/
