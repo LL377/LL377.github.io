@@ -133,7 +133,7 @@ window.projectsData = {
         "srcset": "/assets/profile/mogu/part-15-800.webp 800w, /assets/profile/mogu/part-15.webp 1290w"
       }
     ],
-    "link": "/assets/profile/mogu/complete.jpg",
+    "link": "/assets/profile/mogu/complete.webp",
     "linkLabel": "查看完整高清长图 ↗",
     "presentation": "case-study"
   },
@@ -271,7 +271,7 @@ window.projectsData = {
         "srcset": "/assets/profile/dedao/part-15-800.webp 800w, /assets/profile/dedao/part-15.webp 1501w"
       }
     ],
-    "link": "/assets/profile/dedao/complete.jpg",
+    "link": "/assets/profile/dedao/complete.webp",
     "linkLabel": "查看完整高清长图 ↗",
     "presentation": "case-study"
   },
