@@ -3,16 +3,17 @@
 class ScriptManager {
     constructor() {
         this.cleanupFunctions = [];
-        // Touch layouts use native scrolling and normal document flow.
-        if (window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)').matches) {
+        // 減少動畫偏好時使用簡化佈局（手機與桌面皆適用）
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.documentElement.classList.add('simple-layout');
             document.documentElement.style.overflow = '';
             document.body.style.overflow = '';
             return;
         }
-        // 初始化時禁用滾動（同時設置 html 和 body）
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        // 初始化時禁用滾動（同時設置 html 和 body）；手機保留原生滾動
+        document.documentElement.style.overflow = isMobile ? '' : 'hidden';
+        document.body.style.overflow = isMobile ? '' : 'hidden';
         this.waitForFontsAndInit();
         // 懶加載 initSphereAnimation
         this.sphereAnimationInitialized = false;
@@ -46,12 +47,16 @@ class ScriptManager {
     }
 
     initializeAnimations() {
-        const cleanups = [
-            initPreloaderAnimation(),
-            initHeaderScrollAnimation(),
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        const pinnedAnimations = isMobile ? [] : [
             initCubeScrollAnimation(),
             initSticky2Animation(),
             initFixedElementEffects(),
+        ];
+        const cleanups = [
+            initPreloaderAnimation(),
+            initHeaderScrollAnimation(),
+            ...pinnedAnimations,
             // utility.js 的動畫
             marqueeAnimation(),
             scrollTextReveal(),
@@ -327,7 +332,7 @@ function initSphereAnimation() {
         camera.position.set(0, 0, 1);
 
         renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 768 ? 1 : 2));
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setClearColor(0xeeeeee, 1);
         renderer.physicallyCorrectLights = true;
@@ -431,6 +436,7 @@ function initSphereAnimation() {
         scene.add(sphere);
 
         window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('touchmove', onTouchMove, { passive: true });
         window.addEventListener('resize', resize);
         resize();
     }
@@ -438,6 +444,12 @@ function initSphereAnimation() {
     function onMouseMove(event) {
         const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         targetRotation = -0.8 + mouseX * maxRotation;
+    }
+
+    function onTouchMove(event) {
+        const touch = event.touches && event.touches[0];
+        if (!touch) return;
+        onMouseMove({ clientX: touch.clientX });
     }
 
     function resize() {
@@ -467,6 +479,7 @@ function initSphereAnimation() {
     return () => {
         cancelAnimationFrame(animationFrameId);
         window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('touchmove', onTouchMove);
         window.removeEventListener('resize', resize);
         if (renderer && renderer.domElement && renderer.domElement.parentNode) {
             renderer.domElement.parentNode.removeChild(renderer.domElement);

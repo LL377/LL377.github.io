@@ -128,3 +128,51 @@ html[lang="zh-CN"] body{font-family:"PP Neue Montreal","PingFang SC","Microsoft 
 
 .simple-layout .card-content p{opacity:.85;color:#ddd}
 @media(max-width:767px){.project-modal .arrow-wrap{flex-direction:row}}
+
+/* ===== mobile-full：手机端桌面风格（原生滚动 + 视觉一致） ===== */
+.mobile-full body{overflow-x:clip;background:transparent;color:#eee}
+.mobile-full .cursor,.mobile-full .cursor-wrap,.mobile-full .small-header,
+.mobile-full .home-character-wrapper,.mobile-full .about-bg,.mobile-full .project-bg,
+.mobile-full .loader-bg,.mobile-full .sticky3{display:none!important}
+.mobile-full #brx-header{position:relative;height:auto;min-height:0}
+.mobile-full .header{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:100svh;padding:calc(20px + env(safe-area-inset-top)) 20px 24px;justify-content:space-between;pointer-events:auto}
+.mobile-full .header-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-color:var(--black)}
+.mobile-full .header-txt{width:100%;align-items:center}
+.mobile-full .menu-wrap{display:flex;flex-direction:row;gap:20px;justify-content:center}
+.mobile-full .title-wrap{width:100%;transform:none}
+.mobile-full .title-wrap svg{display:block;width:100%;height:auto}
+.mobile-full .header-info-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
+.mobile-full .header-info{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 16px;opacity:1;font-size:12px;line-height:1.6}
+.mobile-full .info-title-wrap{display:block}
+.mobile-full .kv-bottom{position:relative;bottom:auto;left:auto;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px 20px 24px;z-index:30}
+.mobile-full .kv-bottom .bottom-first{display:flex;flex-direction:column;align-items:center;gap:8px}
+.mobile-full .kv-bottom p{opacity:.8;text-align:center}
+.mobile-full .intro-wrap{position:relative;inset:auto;height:auto;padding:24px 24px 48px;justify-content:center;gap:16px;mix-blend-mode:normal}
+.mobile-full .intro-wrap h4{opacity:.85;font-size:clamp(22px,5.5vw,32px)}
+.mobile-full .sticky,.mobile-full .sticky2{position:relative;height:auto!important;min-height:0;padding:0;overflow:visible;pointer-events:auto}
+.mobile-full .sticky2{display:flex;flex-direction:column;gap:28px;padding:0 20px 24px}
+.mobile-full .sticky-header{position:relative;top:auto;left:auto;width:100%;height:auto;opacity:1;transform:none!important;padding:8px 20px 4px}
+.mobile-full .sticky-header h1{font-size:clamp(28px,7vw,44px)}
+.mobile-full .desc-wrap{position:static;height:auto;min-height:0;padding:0;gap:14px}
+.mobile-full .service-wrap{position:static;inset:auto;height:auto;overflow:visible;gap:12px;padding:8px 0}
+.mobile-full .service-wrap h3{font-size:clamp(22px,5.5vw,30px);cursor:default}
+.mobile-full .service-bg{display:none}
+.mobile-full .service-img{display:block;position:relative;width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding:8px 0 16px}
+.mobile-full .service-img .slide-f,.mobile-full .service-img .slide-k,.mobile-full .service-img .slide-r,.mobile-full .service-img .slide-l,.mobile-full .service-img .slide-t,.mobile-full .service-img .slide-b{position:static;display:inline-block;width:72vw;margin-right:12px;scroll-snap-align:center}
+.mobile-full .service-img img{width:100%;height:auto;display:block}
+.mobile-full .card{position:relative;inset:auto;left:auto;top:auto;width:100%;max-width:none;height:auto;margin:0;padding:10px;border-radius:1em;background-color:var(--black);border:1px solid rgba(255,255,255,.08);perspective:none;transform:none!important;backdrop-filter:none;-webkit-backdrop-filter:none;will-change:auto}
+.mobile-full .card .card-img{width:100%;height:auto;aspect-ratio:4/5;border-radius:.6em;overflow:hidden}
+.mobile-full .card .card-img img{width:100%;height:100%;object-fit:cover;filter:none}
+.mobile-full .card-content{height:auto;padding:12px 8px 4px;gap:14px}
+.mobile-full .card-content h2{font-size:24px;line-height:1.25}
+.mobile-full .card-content p{font-size:13px;line-height:1.6;opacity:.85}
+.mobile-full .card-description{border-top:1px solid rgba(255,255,255,.15);padding-top:12px}
+.mobile-full .about_wrap{background:rgba(8,8,8,.96);height:100dvh;padding:12px;backdrop-filter:none}
+.mobile-full .about_contain{padding:48px 20px 24px}
+.mobile-full #brx-footer{position:relative;width:100%;height:auto;min-height:0;padding:48px 20px calc(48px + env(safe-area-inset-bottom))}
+.mobile-full .outro-wrap{height:auto;min-height:0;gap:40px}
+.mobile-full .footer-color,.mobile-full .footer-info,.mobile-full .footer-info-txt{position:static;width:100%;height:auto;min-height:0;transform:none;opacity:1}
+.mobile-full .marquee-wrap{margin-top:16px}
+/* 手机端滚动入场动画（reveal-ready 由 inline 脚本添加，JS 失效时内容仍可见） */
+.mobile-full.reveal-ready .card,.mobile-full.reveal-ready .kv-bottom,.mobile-full.reveal-ready .intro-wrap{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.mobile-full.reveal-ready .card.in-view,.mobile-full.reveal-ready .kv-bottom.in-view,.mobile-full.reveal-ready .intro-wrap.in-view{opacity:1;transform:none}
