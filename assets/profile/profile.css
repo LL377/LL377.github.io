@@ -51,3 +51,80 @@ html[lang="zh-CN"] body{font-family:"PP Neue Montreal","PingFang SC","Microsoft 
 .project-modal[data-presentation="case-study"] .project-modal-close{top:20px;right:20px;left:auto;transform:none}
 .project-modal[data-presentation="case-study"] .arrow-wrap{background:#080808;padding:16px 24px}
 @media(max-width:767px){.case-heading{padding:20px 16px}.project-modal[data-presentation="case-study"] .project-modal-body{padding-top:65px;padding-bottom:85px}}
+
+/* Native mobile flow: no off-screen cards, pinned stages or GPU blur. */
+.simple-layout body{overflow-x:clip;background:#080808;color:#eee}
+.simple-layout .preloader,.simple-layout .loader-bg,.simple-layout .header-bg,
+.simple-layout .small-header,.simple-layout .home-character-wrapper,
+.simple-layout .sticky,.simple-layout .sticky-header,.simple-layout .service-img,
+.simple-layout .service-bg,.simple-layout .about-bg,.simple-layout .cursor,
+.simple-layout #canvas{display:none!important}
+.simple-layout #brx-header{height:auto;min-height:0}
+.simple-layout .header{position:relative;width:100%;height:auto;min-height:0;padding:28px 20px;gap:28px;opacity:1;visibility:visible;pointer-events:auto}
+.simple-layout .header-txt{flex-direction:column;gap:28px;pointer-events:auto}
+.simple-layout .menu-wrap{display:flex;gap:20px}
+.simple-layout .title-wrap{position:static;width:100%;transform:none}
+.simple-layout .title-wrap svg{display:block;width:100%;height:auto}
+.simple-layout .header-info{opacity:1;gap:12px;flex-wrap:wrap;font-size:12px;line-height:1.6}
+.simple-layout .info-title-wrap{display:none}
+.simple-layout .load-reveal{opacity:1;visibility:visible;transform:none}
+.simple-layout .kv-bottom{position:static;width:100%;height:auto;padding:16px 20px;gap:20px;display:block}
+.simple-layout .bottom-first,.simple-layout .bottom-second{position:static;margin:0 0 16px;font-size:12px}
+.simple-layout .intro-wrap{height:auto;min-height:0;padding:36px 20px;background:#eee;color:#111}
+.simple-layout .intro-wrap h4{font-size:clamp(24px,6vw,40px);line-height:1.6}
+.simple-layout .sticky2{height:auto!important;min-height:0;padding:32px 20px;display:flex;flex-direction:column;gap:24px;pointer-events:auto;overflow:visible}
+.simple-layout .desc-wrap{position:static;height:auto;min-height:0;padding:0;gap:18px;color:#eee}
+.simple-layout .desc-wrap>span{font-size:12px;line-height:1.7}
+.simple-layout .desc-wrap>h1{font-size:48px;mix-blend-mode:normal}
+.simple-layout .service-wrap{position:static;inset:auto;overflow:visible;gap:8px;padding:24px 0}
+.simple-layout .service-wrap h3{font-size:20px;line-height:1.5}
+.simple-layout .card{position:relative;inset:auto;width:100%;max-width:680px;height:auto;margin:0 auto;transform:none!important;opacity:1!important;perspective:none;transform-style:flat;backdrop-filter:none;-webkit-backdrop-filter:none;will-change:auto;border:1px solid #333;padding:8px}
+.simple-layout .card .card-img{height:auto;aspect-ratio:1.25;transform-style:flat}
+.simple-layout .card-img img{width:100%;height:100%;object-fit:cover;filter:none}
+.simple-layout .card-content{height:auto;padding:12px;gap:18px}
+.simple-layout .card-content h2{font-size:22px;padding:0}
+.simple-layout .card-content p{font-size:13px}
+.simple-layout .card-description{padding-top:16px}
+.simple-layout #brx-footer{position:relative;height:auto;min-height:0;padding:40px 20px}
+.simple-layout .outro-wrap,.simple-layout .footer-color,.simple-layout .footer-info{position:relative;height:auto;min-height:0;width:100%;transform:none;opacity:1}
+.simple-layout .outro-wrap h4{font-size:32px;line-height:1.3}
+.simple-layout .outro-wrap .marquee-wrap{display:none}
+.simple-layout .about_wrap{height:100dvh;padding:12px;backdrop-filter:none}
+.simple-layout .about_contain{overscroll-behavior:contain;padding:48px 20px 24px}
+
+@media(max-width:767px){
+ .project-modal{height:100dvh;width:100%;padding:0}
+ .project-modal-content{border-radius:0}
+ .project-container{min-height:0;flex:1}
+ .project-modal .project-modal-close{position:absolute;top:max(12px,env(safe-area-inset-top));right:12px;left:auto;transform:none;width:44px;height:44px;z-index:10}
+ .project-modal .modal-hint{left:16px;top:22px;transform:none;font-size:10px}
+ .project-modal[data-presentation="journal"] .project-modal-body{height:100%;padding:70px 0 80px;overflow-y:auto;justify-content:flex-start;gap:20px;overscroll-behavior:contain}
+ .project-modal[data-presentation="journal"] .project-modal-media{height:auto;flex:none;width:100%;min-width:0}
+ .project-modal[data-presentation="journal"] .swiper-slide{height:clamp(180px,42dvh,420px);max-width:none;width:min(86vw,calc(42dvh * var(--slide-ratio,1.333)));aspect-ratio:auto;padding-bottom:28px;margin-right:12px}
+ .project-modal[data-presentation="journal"] .swiper-slide:first-child{margin-left:16px}
+ .project-modal[data-presentation="journal"] .project-modal-info{position:static;max-width:none;max-height:none;width:100%;overflow:visible;padding:0 20px 16px;flex:none}
+ .project-modal[data-presentation="journal"] .project-modal-title{font-size:24px}
+ .project-modal .arrow-wrap{bottom:0;width:100%;justify-content:space-between;background:#080808;padding:18px 20px calc(18px + env(safe-area-inset-bottom))!important}
+ .project-modal[data-presentation="case-study"] .project-modal-body{padding:64px 0 calc(64px + env(safe-area-inset-bottom))}
+ .case-reader{scrollbar-gutter:auto;-webkit-overflow-scrolling:touch}
+ .case-pages{width:100%}
+}
+
+.simple-layout .sticky2{background:#080808}
+.simple-layout #brx-footer{background:#eee;color:#111}
+.simple-layout .outro-wrap{display:flex;flex-direction:column;gap:32px;padding:0;color:#111}
+.simple-layout .footer-info-txt{position:static;width:100%;font-size:12px;line-height:1.8;display:flex;flex-wrap:wrap;gap:16px;color:#111}
+.simple-layout .footer-color>svg{width:100%;height:auto}
+.simple-layout .back-to-top{position:static;transform:none}
+.simple-layout .intro-wrap{position:relative;inset:auto;justify-content:center}
+.simple-layout .service-wrap{width:100%;height:auto;min-height:0}
+.simple-layout .desc-wrap{width:100%;height:auto;background:#080808;color:#eee}
+.simple-layout .header-info .info-txt{height:auto;overflow:visible}
+.simple-layout .header-info .info-txt>div>p:nth-child(2),.simple-layout [hoverstagger="link"]>[hoverstagger="text"]:nth-child(2){display:none}
+.simple-layout .header-info .info-txt p{line-height:1.6;transform:none}
+.simple-layout .intro-wrap{mix-blend-mode:normal}
+.simple-layout .intro-wrap h4{opacity:1}
+.simple-layout [hoverstagger="link"]>div>[hoverstagger="text"]:nth-child(2){display:none}
+
+.simple-layout .card-content p{opacity:.85;color:#ddd}
+@media(max-width:767px){.project-modal .arrow-wrap{flex-direction:row}}

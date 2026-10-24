@@ -129,6 +129,7 @@ s=script.read_text().replace("preloadTl.set('svg path',", "preloadTl.set('svg pa
 script.write_text(s)
 import runpy
 runpy.run_path(str(ROOT/'scripts/apply_media.py'),run_name='__main__')
+runpy.run_path(str(ROOT/'scripts/optimize_media.py'),run_name='__main__')
 shutil.copy2(ROOT/'index.html',ROOT/'dist/index.html')
 shutil.copytree(ROOT/'assets',ROOT/'dist/assets',dirs_exist_ok=True)
 print('Personalized: LAO LE; three cards (two projects and life journal), Mogu first; resume and email connected.')

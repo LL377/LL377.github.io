@@ -3,6 +3,13 @@
 class ScriptManager {
     constructor() {
         this.cleanupFunctions = [];
+        // Touch layouts use native scrolling and normal document flow.
+        if (window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('simple-layout');
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            return;
+        }
         // 初始化時禁用滾動（同時設置 html 和 body）
         document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';

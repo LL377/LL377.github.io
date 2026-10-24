@@ -12,7 +12,7 @@ s=s[:start]+'''            modal.dataset.presentation = data.presentation || 'pr
                 if (window.projectModalSwiper) { window.projectModalSwiper.destroy(true, true); window.projectModalSwiper = null; }
                 body.innerHTML = `<article class="case-reader" tabindex="0" aria-label="${data.title}完整作品集" data-lenis-prevent>
                     <header class="case-heading"><h2>${data.title}</h2><a href="${data.link}" target="_blank" rel="noopener noreferrer">${data.linkLabel}</a></header>
-                    <div class="case-pages">${data.media.map((item,index)=>`<img src="${item.url}" width="${item.width}" height="${item.height}" alt="${item.alt}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async">`).join('')}</div>
+                    <div class="case-pages">${data.media.map((item,index)=>`<img src="${item.url}" srcset="${item.srcset || ''}" sizes="(max-width: 767px) 100vw, 1501px" width="${item.width}" height="${item.height}" alt="${item.alt}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async">`).join('')}</div>
                     <p class="case-end">END / ${data.title}</p>
                 </article>`;
                 gsap.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.3 });
@@ -25,7 +25,7 @@ s=s[:start]+'''            modal.dataset.presentation = data.presentation || 'pr
                 const label = String(item.alt || '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
                 const visual = item.type === 'video'
                     ? `<video src="${item.url}" autoplay loop muted playsinline class="project-modal-video"></video>`
-                    : `<img src="${item.url}" alt="${label}" class="project-modal-img" decoding="async" data-swiper-parallax-x="10%">`;
+                    : `<img src="${item.url}" srcset="${item.srcset || ''}" sizes="(max-width: 767px) 86vw, 900px" alt="${label}" class="project-modal-img" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async" data-swiper-parallax-x="10%">`;
                 return `<div class="swiper-slide" style="--slide-ratio:${ratio}">${visual}${data.presentation === 'journal' ? `<p class="media-caption">${String(index+1).padStart(2,'0')} / ${label}</p>` : ''}</div>`;
             }).join('');
 ''' + s[end:]
